@@ -42,11 +42,11 @@
 
 \textbf{Resumo}
 
-A métodos lineares de inversão 3D na gravimetria
+Os métodos lineares de inversão 3D na gravimetria
 geralmente discretizam a Terra
 em prismas retangulares retos homogêneos.
 O problema inverso consiste
-em estimar a distribuição de densidade dos prismas
+em estimar uma distribuição de densidade dos prismas
 que ajuste a anomalia da gravidade medida.
 No entanto,
 em estudos de modelagem
@@ -58,9 +58,11 @@ Uma abordagem para isso
 também chamados de tesseroides.
 Assim,
 métodos existentes de inversão
+em coordenadas Cartesianas
 utilizando prismas retangulares
 podem ser adaptados
-para usar tesseroides.
+para usar tesseroides
+em coordenadas esféricas.
 Em geral,
 esta adaptação requer
 um método para calcular
@@ -85,7 +87,7 @@ são colocadas em pontos
 no interior do tesseroide
 que correspondem a raízes
 de um polinômio de Legendre de grau N.
-O número de massas utilizando (N)
+O número de massas utilizadas (N)
 é chamado de ``ordem'' da quadratura.
 A acurácia da integração numérica
 depende do número de massas utilizadas
@@ -139,15 +141,15 @@ com o erro cometido na integração.
 Neste trabalho,
 investigamos qual é o erro
 cometido na integração numérica
-com divisão dos tesseroides.
+com divisão automática dos tesseroides.
 Utilizamos como referência
 o modelo de uma casca esférica,
-para a qual existe
+para qual existe
 uma solução analítica.
 Esta casca é discretizada em tesseroides.
 Comparamos o potencial gravitacional
 e suas primeiras e segundas derivadas
-calculados com o modelo de tesseroides
+calculados a partir do modelo de tesseroides
 com o valor equivalente
 para a casca esférica.
 Este cálculo foi feito
@@ -157,16 +159,14 @@ Fizemos um gráfico
 do erro cometido na integração
 em função da razão distância/tamanho.
 Desta forma,
-determinamos qual é o valor
-da razão distância/tamanho
+determinamos qual é o valor desta razão
 que proporciona um erro máximo aceitável.
 Esta análise pode ser feita
 para o potencial gravitacional e suas derivadas.
 
 Utilizamos os resultados acima
-na modelagem direta
-para adaptar a coordenadas esféricas
-o método de inversão de ``plantação de densidades''.
+para adaptar o método de inversão de ``plantação de densidades''
+a coordenadas esféricas.
 Este método utiliza
 um algoritmo de busca sistemática
 para construir a solução do problema inverso.
@@ -191,7 +191,7 @@ como do tensor gradiente da gravidade.
 
 A modelagem direta com tesseroides
 e a inversão por algoritmo de plantação
-foram implementadas no software
+foram implementadas no software livre
 Fatiando a Terra (\texttt{www.fatiando.org}).
 Recentemente,
 desenvolvemos um novo módulo
@@ -219,7 +219,9 @@ e o tamanho de um tesseroide
 através da comparação
 com o efeito de uma casca esférica.
 Esta razão é utilizada
-em um algoritmo de divisão automática dos tesseroides.
+em um algoritmo de divisão automática dos tesseroides
+para garantir que o erro na integração numérica
+seja menor que um valor estabelecido.
 Observamos que o valor ideal
 para a razão distância/tamanho
 é diferente para o potencial
@@ -236,6 +238,7 @@ Também investigaremos
 a utilização dos dados de gravimetria da gravidade
 fornecidos pelo satélite GOCE.
 O código para gerar este resumo
+e a apresentação que o acompanha
 está disponível em \texttt{https://github.com/leouieda/seminario-on-2014}.
 
 

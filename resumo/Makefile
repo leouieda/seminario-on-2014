@@ -8,4 +8,4 @@ $(DOC).pdf: $(DOC).tex logo_on.pdf
 	pdflatex $<
 
 clean:
-	rm -f *.aux *.log $(DOC).pdf
+	rm -f *.aux *.log

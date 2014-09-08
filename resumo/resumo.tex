@@ -142,14 +142,67 @@ Esta análise pode ser feita para o potencial gravitacional e suas derivadas.
 
 
 
+Utilizamos os resultados acima na modelagem direta para adaptar a coordenadas
+esféricas o método de inversão de ``plantação de densidades''.
 
+Este método utiliza um algoritmo de busca sistemática para construir a solução
+do problema inverso.
+
+O algoritmo adiciona tesseroides em torno de um conjunto inicial de tesseroides
+``sementes'' fornecidos pelo interprete.
+
+Desta maneira, a solução cresce em torno das sementes até que os dados preditos
+pela solução ajustem os dados observados.
+
+A maior vantagem do método de plantação é sua eficiência computacional.
+
+O algoritmo não requer a solução de sistemas lineares e matriz de sensibilidade
+pode ser calculada de forma eficiente.
+
+Realizamos testes com dados sintéticos tanto da anomalia da gravidade como
+do tensor gradiente da gravidade.
+
+
+
+
+A modelagem direta com tesseroides e a inversão por algoritmo de plantação
+foram implementadas no software Fatiando a Terra (www.fatiando.org).
+
+Recentemente, desenvolvemos um novo módulo chamado \texttt{fatiando.inversion}.
+
+Este módulo automatiza grande parte da solução de um problema inverso.
+
+Para implementar um problema novo, o usuário necessita somente desenvolver a
+solução do problema direto e a criação da matriz de sensibilidade.
+
+Uma vez feitas essas duas etapas, o usuário tem acesso automático a diversos
+métodos de optimização e regularização.
+
+Desta forma é possível reutilizar as rotinas de modelagem direta implementadas
+no Fatiando a Terra para desenvolver novos métodos de inversão e adaptar
+adaptar métodos existentes a novas parametrizações.
+
+
+Em conclusão,
+determinamos um valor ideal para a razão entre a distância ao ponto observação
+e o tamanho de um tesseroide através da comparação com uma casca esférica.
+
+Esta razão é utilizada na modelagem direta em um algoritmo de divisão automática dos tesseroides.
 
 Observamos que o valor ideal para a razão distância/tamanho é diferente para o
 potencial e suas derivadas segundas.
 
+Esses resultados foram utilizados na adaptação do método de inversão por
+plantação de densidades para coordenadas esféricas.
 
+Esta adaptação foi testada em dados sintéticos que simulam diferentes ambientes
+geológicos.
 
+Para a aplicação em dados reais, serão utilizados dados de modelos
+geopotenciais.
 
+Também investigaremos a utilização dos dados de gravimetria da gravidade
+fornecidos pelo satélite GOCE.
 
 
 

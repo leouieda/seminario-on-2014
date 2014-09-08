@@ -1,1 +1,3 @@
 .~lock.slides.odp#
+*.aux
+*.log

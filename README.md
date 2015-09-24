@@ -1,6 +1,11 @@
 # Modelagem e inversão em coordenadas esféricas na gravimetria
 
+[Leonardo Uieda](http://www.leouieda.com)
+
 Seminário anual (2014) da pós-graduação em geofísica do Observatório Nacional.
+
+Slides at [SpeakerDeck](https://speakerdeck.com/leouieda/modelagem-e-inversao-em-coordenadas-esfericas-na-gravimetria).
+
 
 ## Resumo
 
